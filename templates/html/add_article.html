@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knowledge base</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/addArticle.css' %}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="top">
+          <div class="logoText">
+            <h2 class="knowledge">Knowledge</h2><h2 class="base">Base</h2>
+          </div>
+          <div class="links">
+            <a href="{% url 'articles' %}">Lesen</a>
+            <a href="{% url 'agb' %}">AGB</a>
+            <a href="{% url 'imprint' %}">Impressum</a>
+          </div>
+        </div>
+      </header>
+      <div class="articles">
+        <form action="{% url 'articles' %}" method="post">
+          {% csrf_token %}
+          <input required placeholder="Titel" name="title" type="text" />
+          <textarea required placeholder="Text" name="content"></textarea>
+          <input required placeholder="Author" name="author" type="text" />
+          <div class="button-container">
+            <button type="submit">Speichern</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

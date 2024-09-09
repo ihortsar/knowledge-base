@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    background-color: #ECF1F5;
+}
+
+.wrapper {
+    min-height: 98vh;
+}
+
+header {
+    background-color: #354650;
+    color: white;
+    padding: 40px 20px;
+}
+
+.logoText {
+    display: flex;
+    align-items: center;
+}
+
+.knowledge {
+    color: #888;
+    margin-right: 10px;
+}
+
+.base {
+    color: #ffffff;
+    font-weight: 100;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    align-items: center;
+    font-size: 20px;
+}
+
+.bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+a {
+    color: gray;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    padding: 15px 25px;
+    border-radius: 10px;
+    min-width: 40%;
+    margin-top: 10px;
+    outline: none;
+    border: none;
+}
+
+input::placeholder {
+    font-size: 16px;
+    color: #888;
+}
+
+.inputDescript {
+    color: #888;
+    font-size: 20px;
+}
+
+.articles {
+    min-height: calc(100vh - 345px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article {
+    background-color: white;
+    padding: 20px 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+    min-width: 50%;
+    color: #354650
+}
+
+.button {
+    border: none;
+    background-color: #354650;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    position: fixed;
+    right: 80px;
+    bottom: 20px
+}

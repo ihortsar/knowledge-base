@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knowledge base</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/findArticle.css' %}" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="top">
+          <div class="logoText">
+            <h2 class="knowledge">Knowledge</h2><h2 class="base">Base</h2>
+          </div>
+          <div class="links">
+            <a href="{% url 'add_article' %}">Hinzufügen</a>
+            <a href="{% url 'agb' %}">AGB</a>
+            <a href="{% url 'imprint' %}">Impressum</a>
+          </div>
+        </div>
+        <div class="bottom">
+          <h1>Knowledge Base</h1>
+          <span class="inputDescript">Durchsuche unsere großartige Datenbank</span>
+          <form method="get" action="{% url 'articles' %}">
+            <input type="text" name="q" placeholder="Unsere Datenbank durchsuchen" value="{{ request.GET.q }}" />
+          </form>
+        </div>
+      </header>
+      <div class="articles">
+        {% for article in articles %}
+          <div class="article">
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.content }}</p>
+            <span>Author: {{ article.author }}</span>
+          </div>
+        {% empty %}
+          <p>No articles found.</p>
+        {% endfor %}
+      </div>
+    </div>
+    <a href="{% url 'add_article' %}" class="button">Hinzufügen</a>
+
+  </body>
+</html>
